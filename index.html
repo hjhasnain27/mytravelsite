@@ -8,44 +8,14 @@
 
     <!-- ✅ Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
 
     <!-- 🚀 FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
-        /* 🌅 Background image with text overlay */
-        .bg-img {
-            background-image: url('banner.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-        }
+       
 
-        /* 🌟 Text animation in center of background */
-        .text-animation-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color:Black;
-            font-size:50px;
-            font-weight: bold;
-            z-index: 3;
-            font-family: 'Playfair Display', serif;
-
-
-        }
-
-        .text-animation-container::after {
-            content: '|';
-            animation: blink 0.7s infinite;
-            margin-left: 5px;
-        }
 
         @keyframes blink {
             0%, 50% { opacity: 1; }
@@ -70,15 +40,15 @@
 
         /* 🌫️ Navbar blur effect */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.7) !important;
+            background-color:white !important;
             backdrop-filter: blur(5px);
-            height: 80px;
+            height: 100px;
             z-index: 4;
         }
 
         /* 🎨 Navbar text styles */
         .nav-manu {
-            color: white !important;
+            color: Black !important;
             font-weight: bold;
             transition: color 0.3s ease-in-out;
             margin: 0 20px;
@@ -94,7 +64,7 @@
             transform: translateX(-50%) scaleX(0);
             width: 100%;
             height: 2px;
-            background-color: white;
+            background-color:black;
             transition: transform 0.4s ease-in-out;
             transform-origin: center;
         }
@@ -110,46 +80,53 @@
         /* 🌟 Slider Centering */
         .slider-container {
             position: relative;
-            width: 80%;
-            max-width: 900px;
-            height: 400px;
+            width: 100%;
+            max-width: 1200px;
+            height:450px;
             margin: 100px auto;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            
         }
-
         .slider-container img {
-            position: absolute;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
-            opacity: 0;
-            filter: blur(5px);
-            z-index: 1;
-            transform: scale(0.9);
-        }
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px; /* 🔄 Increase kiya border-radius for more curve */
+    transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
+    opacity: 0;
+    filter: blur(5px);
+    z-index: 1;
+    transform: scale(0.9);
+}
 
-        .slider-container img.active {
-            transform: translateX(0) scale(1.2);
-            opacity: 1;
-            filter: blur(0);
-            z-index: 3;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
+.slider-container img.active {
+    transform: translateX(0) scale(1.2);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 3;
+    border-radius: 30px !important; /* 🔥 Force border-radius apply */
+    overflow: hidden; /* ✅ Ensure rounded corners show after scaling */
+}
+
+.slider-container img.left,
+.slider-container img.right,
+.slider-container img.back {
+    border-radius: 30px; /* ✅ Baaki positions ke images pe bhi curve apply kiya */
+}
 
         .slider-container img.left {
-            transform: translateX(-40%) scale(0.9);
-            opacity: 0.5;
+            transform: translateX(-50%) scale(0.9);
+            opacity: 1;
             z-index: 2;
         }
 
         .slider-container img.right {
-            transform: translateX(40%) scale(0.9);
-            opacity: 0.5;
+            transform: translateX(50%) scale(0.9);
+            opacity: 1;
             z-index: 2;
         }
 
@@ -175,10 +152,16 @@
         
         /* 🌟 Footer styles */
         .footer-section {
-            background-color: #111;
-            color: #fff;
-            padding: 50px 0px 20px 0px;
-        }
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('footer.jpg');
+            
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-color: #111; /* Fallback color if image doesn't load */
+    color: #fff;
+    padding: 50px 0px 20px 0px;
+}
+
 
         .my-list {
             text-decoration: none;
@@ -186,10 +169,25 @@
             padding: 0;
         }
 
-        .footer-section h2,
-        .footer-section h1 {
-            text-align: center;
+        .my-list li {
+            font-size: 18px;
         }
+
+        
+        @media (min-width: 768px) {
+            .my-list , .news {
+              line-height: 20px;
+              margin-top:20px ;
+            
+
+            }
+            
+        .footer-section h2
+        {
+     font-size: 40px;
+        }
+        }
+
 
         .footer-section p {
             text-align: justify;
@@ -201,15 +199,22 @@
                 text-align: center;
             }
         }
+        .web-logo{
+            object-fit: contain;
+            height: 150px;
+            width:150px;
+        }
     </style>
 </head>
 <body>
 
     <!-- 🌄 Background with Navbar and Text Animation -->
-    <div class="bg-img">
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    
+        <nav class="navbar navbar-expand-lg navbar-light fixed">
             <div class="container">
-                <a class="navbar-brand text-white" href="#">MyWebsite</a>
+                <a class="navbar-brand text-white" href="#">
+                    <img class="web-logo"  src="logo.png">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -224,43 +229,19 @@
             </div>
         </nav>
 
-        <!-- 🌟 Text Animation Section -->
-        <div class="text-animation-container" id="animated-text">  </div>
-    </div>
-
+        <div class="text-animation-container">
+            <span id="animated-text"></span>
+        </div>
     <!-- 🌍 Centered Circle Slider -->
     <div class="slider-container">
         <img src="italy.png" class="active" alt="Image 1">
-        <img src="usa.png" class="right" alt="Image 2">
-        <img src="spain.png" class="back" alt="Image 3">
-        <img src="thailand.png" class="left" alt="Image 4">
+        <img src="united state.png" class="right" alt="Image 2">
+        <img src="United Kindgom.png" class="back" alt="Image 3">
+        <img src="spain.png" class="left" alt="Image 4">
     </div>
 
     <!-- 🌟 Animation Script -->
     <script>
-        // 🌈 Text Animation Logic
-        const words = ["Your ultimate destination to kickstart your journey with our budget-friendly prices", "Ummrah", "Tours", "Flights"];
-        let wordIndex = 0, charIndex = 0, isDeleting = false;
-        const textContainer = document.getElementById("animated-text");
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            const visibleText = currentWord.substring(0, charIndex);
-            textContainer.textContent = visibleText;
-
-            if (!isDeleting && charIndex < currentWord.length) {
-                charIndex++;
-                setTimeout(typeEffect, 200);
-            } else if (isDeleting && charIndex > 0) {
-                charIndex--;
-                setTimeout(typeEffect, 100);
-            } else {
-                isDeleting = !isDeleting;
-                if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(typeEffect, 500);
-            }
-        }
-        typeEffect(); // 🔥 Start Text Animation
 
         // 🌍 Slider Animation Logic
         const images = document.querySelectorAll(".slider-container img");
@@ -284,276 +265,345 @@
 
 <!-- About Us  -->
 
-<section class="about-us-section" id="about-us">
-    <div class="container">
-        <h2 class="about-title">About Us</h2>
-        <p class="about-description">
-            We believe that traveling isn't just about reaching a destination; it's about the journey, the experiences, and the stories you create along the way. Our mission is to provide affordable travel solutions that inspire you to explore the world with comfort and confidence.
-        </p>
-        <div class="about-cards">
-            <div class="about-card">
-                <i class="fas fa-globe-americas"></i>
-                <h3>Global Destinations</h3>
-                <p>Discover breathtaking destinations worldwide, each offering unique cultures and experiences.</p>
+<style>
+    .section-container {
+        display: flex;
+        padding: 40px;
+        align-items: center;
+    }
+    
+    .left-column {
+        position: relative;
+        border: 2px solid #0047AB;
+        width: 330px;
+        height: 400px;
+        display: flex;
+        margin-left: 80px;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+    }
+    /* 🔥 New Left Border Line */
+    .left-column::before {
+        content: "";
+        position: absolute;
+        left: -70px; /* 50px (image offset) + 20px (gap) */
+        top: 20px;
+        width: 4px;
+        height: 50%;
+        background-color: #0047AB;
+    }
+
+    .left-column img.main-img {
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 330px;
+        height: 420px;
+        object-fit: cover;
+    }
+
+    .left-column img.overlay-img {
+        position: absolute;
+        right: -60px;
+        top: 250px;
+        bottom: -60px;
+        width: 180px;
+        height: auto;
+    }
+
+    .right-column {
+        flex: 1;
+    }
+
+    .about-heading {
+        margin-top: -60px;
+        color: #0047AB;
+        font-weight: 700;
+        font-size: 12px;
+    }
+
+    .about-sub-heading {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .circle-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    .circle {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+        background: #fff;
+    }
+
+    .circle::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        background: conic-gradient(#0047AB calc(var(--percentage) * 1%), #e0e0e0 0%);
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+        mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+    }
+
+    .circle span {
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .circle-text {
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .icon-text {
+        font-size: 20px;
+    }
+
+    .icon-color {
+        color: #0047AB;
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .tick-main {
+        margin-top: 20px;
+        list-style: none;
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .btn-work {
+        margin-top: 20px;
+    }
+
+    .btn-work-inner {
+        background-color: #0047AB;
+        padding: 10px 40px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+    }
+</style>
+
+<section class="section-container">
+    <div class="row">
+        <div class="col-md-5 ">
+            <div class="left-column">
+                <img src="boximg.jpg" alt="Main Image" class="main-img">
+                <img src="glob.jpg" alt="Overlay Image" class="overlay-img">
             </div>
-            <div class="about-card">
-                <i class="fas fa-plane-departure"></i>
-                <h3>Seamless Journeys</h3>
-                <p>From flights to accommodations, we ensure a smooth and hassle-free travel experience for you.</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>Affordable Prices</h3>
-                <p>Enjoy premium travel experiences without breaking the bank. Adventure is now within reach.</p>
+        </div>
+        <div class="col-md-7 ">
+            <div class="right-column">
+                <p class="about-heading">ABOUT COMPANY</p>
+                <h2 class="about-sub-heading">Welcome to Experience <br>Visa Consulting Firm</h2>
+                <p class="pt-2">
+                    Transmds is the world’s driving worldwide coordinations provider — we uphold industry and exchange the worldwide trade of merchandi
+                </p>
+                <div class="circle-container">
+                    <div class="circle" style="--percentage: 75;">
+                        <span>75%</span>
+                    </div>
+                    <div class="circle-text">Business <br> Strategy</div>
+
+                    <div class="circle" style="--percentage: 50;">
+                        <span>50%</span>
+                    </div>
+                    <div class="circle-text">Real Technology<br> Solution</div>
+                </div>
+                <div>
+                    <ul class="tick-main">
+                        <li class="icon-text"><i class="fa-solid fa-check icon-color"></i> Immigration & Visa Consulting</li>
+                        <li><i class="fa-solid fa-check icon-color"></i> Direct Online Interview</li>
+                        <li><i class="fa-solid fa-check icon-color"></i> 99% Visa Approvals</li>
+                    </ul>
+                    <div class="btn-work">
+                        <button type="submit" class="btn-work-inner">About Us <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<style>
-.about-us-section {
-    background: linear-gradient(135deg, #6498C8, #1F3A5F);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
 
-.about-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: fadeInDown 1.2s ease-out;
-}
-
-.about-description {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-    animation: fadeInUp 1.5s ease-out;
-}
-
-.about-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.about-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    width: 280px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: zoomIn 1.8s ease-out;
-}
-
-.about-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.about-card i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    transition: color 0.4s ease;
-}
-
-.about-card:hover i {
-    color: #FFD700;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 768px) {
-    .about-title {
-        font-size: 2.5rem;
-    }
-    .about-description {
-        font-size: 1rem;
-    }
-    .about-card {
-        width: 100%;
-    }
-}
-</style>
 
 
 <!-- our services  -->
-<section class="unique-services" id="our-serve">
-    <div class="container">
-        <h2 class="section-heading">Our Services</h2>
-        <p class="section-subtitle">
-            Tailored experiences for every traveler — from spiritual journeys to European escapes.
-        </p>
-        <div class="services-list">
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-kaaba"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Umrah Packages</h3>
-                    <p>Join our spiritually enriching Umrah trips with comprehensive services, ensuring a peaceful and memorable journey.</p>
-                </div>
+<style>
+    .marquee-container {
+        
+        height: 100px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .marquee-content {
+        display: flex;
+        gap: 60px;
+        animation: scrollFlags 30s linear infinite;
+    }
+
+    .marquee-wrapper {
+        display: flex;
+        width: max-content; /* Dynamic width for perfect fit */
+    }
+
+    .flag-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .flag-item img {
+        height: 30px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .country-name {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    @keyframes scrollFlags {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Extra gap at the end to match inter-flag spacing */
+    .end-gap {
+        width: 5px; /* Same as gap between flags */
+    }
+    .e-visa{
+        font-size: 40px;
+        color:Black;
+    }
+</style>
+<div>
+    <h2  class=" container-fluid e-visa"> E-visa Servics:</h2>
+</div>
+<section class="marquee-container">
+    
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+           
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/az.png" alt="Azerbaijan Flag">
+                <div class="country-name">Azerbaijan</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/th.png" alt="Thailand Flag">
+                <div class="country-name">Thailand</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/ae.png" alt="UAE Flag">
+                <div class="country-name">UAE</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag">
+                <div class="country-name">Malaysia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/id.png" alt="Indonesia Flag">
+                <div class="country-name">Indonesia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/kh.png" alt="Cambodia Flag">
+                <div class="country-name">Cambodia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag">
+                <div class="country-name">Vietnam</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/sg.png" alt="Singapore Flag">
+                <div class="country-name">Singapore</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka Flag">
+                <div class="country-name">Sri Lanka</div>
             </div>
 
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-globe-europe"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Europe Tours</h3>
-                    <p>Uncover the beauty of Europe with our curated tours designed for an unforgettable experience.</p>
-                </div>
-            </div>
+            <!-- ⭐ Added gap for smooth transition ⭐ -->
+            <div class="end-gap"></div>
+        </div>
 
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-plane-departure"></i>
-                </div>
-                <div class="service-content">
-                    <h3>Flight Bookings</h3>
-                    <p>Book flights globally with ease and flexibility, offering the best rates and options for your trips.</p>
-                </div>
+        <!-- Seamless Duplicate with same gap -->
+        <div class="marquee-content">
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/az.png" alt="Azerbaijan Flag">
+                <div class="country-name">Azerbaijan</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/th.png" alt="Thailand Flag">
+                <div class="country-name">Thailand</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/ae.png" alt="UAE Flag">
+                <div class="country-name">UAE</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag">
+                <div class="country-name">Malaysia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/id.png" alt="Indonesia Flag">
+                <div class="country-name">Indonesia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/kh.png" alt="Cambodia Flag">
+                <div class="country-name">Cambodia</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag">
+                <div class="country-name">Vietnam</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/sg.png" alt="Singapore Flag">
+                <div class="country-name">Singapore</div>
+            </div>
+            <div class="flag-item">
+                <img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka Flag">
+                <div class="country-name">Sri Lanka</div>
             </div>
         </div>
     </div>
 </section>
 
-<style>
-.unique-services {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    padding: 90px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
 
-.section-heading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientText 3s ease infinite;
-}
-
-.section-subtitle {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    margin-bottom: 50px;
-    line-height: 1.6;
-}
-
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.service-item {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slideInUp 1s ease forwards;
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-}
-
-.service-icon i {
-    font-size: 3.5rem;
-    color: #ffd700;
-    transition: transform 0.4s ease;
-}
-
-.service-item:hover .service-icon i {
-    transform: scale(1.2) rotate(10deg);
-}
-
-.service-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.service-content p {
-    font-size: 1rem;
-    color: #d0d0d0;
-    line-height: 1.6;
-}
-
-/* Gradient Animation for Heading */
-@keyframes gradientText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Slide-up animation */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .service-item {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-</style>
+<section>
+    
+</section>
 
 
 
@@ -561,44 +611,62 @@
 
 
 
- <!-- 🌟 Footer Section with Icons -->
- <footer class="footer-section" id="cont-us">
+<!-- 🌟 Footer Section with Icons -->
+<footer class="footer-section" id="cont-us">
     <div class="container-fluid">
-        <div class="row text-center text-lg-center">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h1>My Website Logo</h1>
+        <div class="row d-flex justify-content-between">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="#">
+                    <img class="web-logo" src="logo.png">
+                </a>
                 <p>Traveling opens the door to new adventures, allowing you to explore breathtaking destinations
                     and immerse yourself in diverse cultures. From serene beaches to majestic mountains, every journey creates
                     unforgettable memories.</p>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h2>Contact Us</h2>
-                <ul class="my-list">
-                    <li>Email: newtravellar@gmail.com</li>
-                    <li>Phone No: 0300 0000000</li>
-                    <li>Social Accounts:</li>
-                    <li>
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-12 mb-4">
-                <h2>Newsletter</h2>
-                <p>Subscribe to get updates on the best travel destinations and tips.</p>
-                <form>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
+            <div class="col-lg-8 col-md-6 d-flex justify-content-end">
+                <div class="row w-100">
+                    <div class="col-lg-6 col-md-6 mb-4 mt-5">
+                        <h2 style="color: #FFBA21;">Contact Us</h2>
+                        <ul class="my-list">
+                            <li>
+                                <strong>Email:</strong> 
+                                <div class="mt-2">Info@expertsinn.com</div>
+                                <div>Travel@expertsinn.com</div>
+                            </li> <br>
+                            <li>
+                                <strong>Phone No:</strong> 
+                                <div class="mt-2">03210941116</div>
+                                <div>03210941119</div>
+                            </li> <br>
+                            <li><strong>Address:</strong></li>
+                            <div class="mt-2">Chohan tower jail road lahore</div> <br>
+                            <li><strong>Social Accounts:</strong></li> 
+                            <li class="d-flex gap-3  mt-2">
+                                <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white"><i class="fab fa-tiktok"></i></a>
+                            </li>
+                        </ul>
                     </div>
-                </form>
+                    <div class="col-lg-6 col-md-12 mb-4 mt-5">
+                        <h2 style="color: #FFBA21;">Newsletter</h2>
+                        <p class="news">Subscribe to get updates on the best travel destinations and tips.</p>
+                        <form class="news">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="text-center"> All Right Reserved @newtravellar 2025.</p>
+        <p class="text-center"> All Right Reserved @Travel Experts 2025.</p>
     </div>
 </footer>
+
+
 
 
     <!-- 🚀 Bootstrap JS Bundle (with Popper) -->

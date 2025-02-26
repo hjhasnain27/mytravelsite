@@ -32,10 +32,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white;
-            font-size: 3rem;
+            color:Black;
+            font-size:50px;
             font-weight: bold;
             z-index: 3;
+            font-family: 'Playfair Display', serif;
+
+
         }
 
         .text-animation-container::after {
@@ -48,6 +51,22 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
+        /* 🌫️ Navbar collapse background fix for mobile */
+        @media (max-width: 991.98px) { /* Bootstrap lg breakpoint ke liye */
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        backdrop-filter: blur(5px);
+        position: absolute;
+        top: 80px; /* Navbar height ke niche se start kare */
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        padding: 10px 0;
+    }
+}
+
+
+
 
         /* 🌫️ Navbar blur effect */
         .navbar {
@@ -94,7 +113,7 @@
             width: 80%;
             max-width: 900px;
             height: 400px;
-            margin: 50px auto;
+            margin: 100px auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -186,6 +205,10 @@
 </head>
 <body>
 
+
+<img  src="Security Website.png">
+
+
     <!-- 🌄 Background with Navbar and Text Animation -->
     <div class="bg-img">
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -197,16 +220,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link nav-manu active" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link nav-manu" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link nav-manu" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link nav-manu" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link nav-manu" href="#about-us">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link nav-manu" href="#our-serve">Our Services</a></li>
+                        <li class="nav-item"><a class="nav-link nav-manu" href="#cont-us">Contact US</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <!-- 🌟 Text Animation Section -->
-        <div class="text-animation-container" id="animated-text"></div>
+        <div class="text-animation-container" id="animated-text">  </div>
     </div>
 
     <!-- 🌍 Centered Circle Slider -->
@@ -220,7 +243,7 @@
     <!-- 🌟 Animation Script -->
     <script>
         // 🌈 Text Animation Logic
-        const words = ["Hasnain", "Jaleel", "Ahmed", "Sara"];
+        const words = ["Your ultimate destination to kickstart your journey with our budget-friendly prices", "Ummrah", "Tours", "Flights"];
         let wordIndex = 0, charIndex = 0, isDeleting = false;
         const textContainer = document.getElementById("animated-text");
 
@@ -263,8 +286,287 @@
     </script>
 
 
+<!-- About Us  -->
+
+<section class="about-us-section" id="about-us">
+    <div class="container">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-description">
+            We believe that traveling isn't just about reaching a destination; it's about the journey, the experiences, and the stories you create along the way. Our mission is to provide affordable travel solutions that inspire you to explore the world with comfort and confidence.
+        </p>
+        <div class="about-cards">
+            <div class="about-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Global Destinations</h3>
+                <p>Discover breathtaking destinations worldwide, each offering unique cultures and experiences.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-plane-departure"></i>
+                <h3>Seamless Journeys</h3>
+                <p>From flights to accommodations, we ensure a smooth and hassle-free travel experience for you.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Affordable Prices</h3>
+                <p>Enjoy premium travel experiences without breaking the bank. Adventure is now within reach.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.about-us-section {
+    background: linear-gradient(135deg, #6498C8, #1F3A5F);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.about-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.about-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    width: 280px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: zoomIn 1.8s ease-out;
+}
+
+.about-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: color 0.4s ease;
+}
+
+.about-card:hover i {
+    color: #FFD700;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-description {
+        font-size: 1rem;
+    }
+    .about-card {
+        width: 100%;
+    }
+}
+</style>
+
+
+<!-- our services  -->
+<section class="unique-services" id="our-serve">
+    <div class="container">
+        <h2 class="section-heading">Our Services</h2>
+        <p class="section-subtitle">
+            Tailored experiences for every traveler — from spiritual journeys to European escapes.
+        </p>
+        <div class="services-list">
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-kaaba"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Umrah Packages</h3>
+                    <p>Join our spiritually enriching Umrah trips with comprehensive services, ensuring a peaceful and memorable journey.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-globe-europe"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Europe Tours</h3>
+                    <p>Uncover the beauty of Europe with our curated tours designed for an unforgettable experience.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Flight Bookings</h3>
+                    <p>Book flights globally with ease and flexibility, offering the best rates and options for your trips.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.unique-services {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 90px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s ease infinite;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInUp 1s ease forwards;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon i {
+    font-size: 3.5rem;
+    color: #ffd700;
+    transition: transform 0.4s ease;
+}
+
+.service-item:hover .service-icon i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.service-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-content p {
+    font-size: 1rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+/* Gradient Animation for Heading */
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Slide-up animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+
+
+
+
+
+
+
  <!-- 🌟 Footer Section with Icons -->
- <footer class="footer-section">
+ <footer class="footer-section" id="cont-us">
     <div class="container-fluid">
         <div class="row text-center text-lg-center">
             <div class="col-lg-4 col-md-6 mb-4">
