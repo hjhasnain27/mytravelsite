@@ -9,7 +9,7 @@
     <!-- ✅ Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 🚀 FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -119,13 +119,13 @@
 }
 
         .slider-container img.left {
-            transform: translateX(-50%) scale(0.9);
+            transform: translateX(-60%) scale(0.9);
             opacity: 1;
             z-index: 2;
         }
 
         .slider-container img.right {
-            transform: translateX(50%) scale(0.9);
+            transform: translateX(60%) scale(0.9);
             opacity: 1;
             z-index: 2;
         }
@@ -159,7 +159,7 @@
     background-repeat: no-repeat; /* Prevents image repetition */
     background-color: #111; /* Fallback color if image doesn't load */
     color: #fff;
-    padding: 50px 0px 20px 0px;
+    padding: 0px 0px 10px 0px;
 }
 
 
@@ -204,6 +204,21 @@
             height: 150px;
             width:150px;
         }
+        .web-costum-container {
+    max-width: 1200px; /* Ya jitni width chahiye */
+    margin: 0 auto; /* Center karne ke liye */
+    padding: 0 20px; /* Thoda andar ka padding */
+}
+.social-img{
+    font-size: 20px;
+    color: black;
+    align-items: center;
+    
+}
+.social-img:hover{
+    color: #0047AB;
+}
+
     </style>
 </head>
 <body>
@@ -228,7 +243,7 @@
                 </div>
             </div>
         </nav>
-
+ <div class="web-costum-container">
         <div class="text-animation-container">
             <span id="animated-text"></span>
         </div>
@@ -268,7 +283,7 @@
 <style>
     .section-container {
         display: flex;
-        padding: 40px;
+        
         align-items: center;
     }
     
@@ -442,7 +457,7 @@
         </div>
     </div>
 </section>
-
+</div>
 
 
 
@@ -455,6 +470,7 @@
         align-items: center;
         overflow: hidden;
         position: relative;
+        margin-bottom: 50px;
     }
 
     .marquee-content {
@@ -505,12 +521,14 @@
         width: 5px; /* Same as gap between flags */
     }
     .e-visa{
-        font-size: 40px;
+        font-size: 30px;
+        margin-top:50px;
         color:Black;
     }
 </style>
+
 <div>
-    <h2  class=" container-fluid e-visa"> E-visa Servics:</h2>
+    <h2  class=" container e-visa"> E-visa Servics:</h2>
 </div>
 <section class="marquee-container">
     
@@ -601,13 +619,215 @@
 </section>
 
 
-<section>
 
+<section class="services-section">
+    <div class="image-container lg-3">
+        <img src="serve-back1.jpg" alt="United States" class="service-image" />
+    </div>
+    <div class="content-container lg-9">
+        <p class="serve-heading"> SERVICES WE DELIVER</p>
+        <p class="serv-tagline"> Seamless Visa Solutions <br> Your Gateway to <Span style="color: #FFBA21;">Global Opportunities!</Span></p>
+
+
+    </div>
+    
+    <!-- Cards Positioned Overlapping Both Sections -->
+    <div class="cards-container"></div>
 </section>
 
+<style>
+    .serve-heading{
+        font-size:12px;
+        margin-left: 40px;
+        color:#0047AB;
+        font-weight: 900;
+    }
+    .serv-tagline{
+        margin-top: 10px;
+        font-size: 30px;
+        margin-left: 40px;font-weight: 700;
+    
+    }
+    .services-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #ffffff, #EBEEF5, #ffffff);
 
 
+    }
+    .image-container {
+        height: 100%;
+        position: relative;
+        flex: 1;
+    }
+    .image-container.lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content-container {
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .content-container.lg-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        overflow: hidden;
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .card {
+        flex: 1;
+        min-width: 30%;
+        background: #f8f9fa;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .card-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+    }
+    .arrow-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        background: #0047AB;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+</style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.querySelector(".cards-container");
+        const cards = [
+            { img: "fil-sub.jpg", text: "Wordwide Group Tour" },
+            { img: "group tour.jpg", text: "Visa Culsontancy" },
+            { img: "ummrah1.png", text: "Ummrah Packages" },
+            { img: "family.jpg", text: "Worlwide Family Tour" },
+            { img: "domestic.jpg", text: "Domestic Tourism (Nothen Areas)" },
+            { img: "hotel-booking.jpg", text: "Air Ticketing/Hotel Booking" }
+        ];
+        
+        function updateCards() {
+            container.innerHTML = "";
+            for (let i = 0; i < 3; i++) {
+                let card = document.createElement("div");
+                card.classList.add("card");
+                
+                let img = document.createElement("img");
+                img.src = cards[i].img;
+                img.alt = `Card ${i + 1} Image`;
+                img.classList.add("card-image");
+                
+                let text = document.createElement("p");
+                text.innerText = cards[i].text;
+                
+                let arrowButton = document.createElement("div");
+                arrowButton.classList.add("arrow-button");
+                arrowButton.innerHTML = "&#8594;";
+                
+                card.appendChild(img);
+                card.appendChild(text);
+                card.appendChild(arrowButton);
+                container.appendChild(card);
+            }
+        }
+        
+        function slideCards() {
+            cards.push(cards.shift()); // Move first card to the end
+            updateCards();
+        }
+        
+        updateCards();
+        setInterval(slideCards, 3000); // Change cards every 2 seconds
+    });
+</script>
+
+<div class="web-costum-container">
+
+
+    <div class="circle-container">
+        <div class="circle-box">
+            <img src="package1.jpg" alt="Service Image">
+        </div>
+        <div class="circle-box">
+            <img src="package1.jpg" alt="Service Image">
+        </div>
+        <div class="circle-box">
+            <img src="package1.jpg" alt="Service Image">
+        </div>
+    </div>
+    
+    <style>
+    /* Main Container */
+    .circle-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Align vertically */
+        gap: 20px; /* Space between circles */
+        margin: 50px 0px;
+    }
+    
+    /* Circle Box */
+    .circle-box {
+        width: 150px; /* Circle size */
+        height: 150px;
+        border-radius: 50%; /* Makes it circular */
+        background: linear-gradient(15deg, #DDE2EB, #EBEEF5); /* Soft gradient */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Crop extra image parts */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+    
+    /* Image inside Circle */
+    .circle-box img {
+        width: 85%; /* Adjust image size */
+        height: 85%;
+        object-fit: cover; /* Crop image to fit */
+        border-radius: 50%; /* Ensures image is also circular */
+    }
+    </style>
+    
+
+
+<!-- Bootstrap JS (jQuery not required for Bootstrap 5) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</div>
 
 
 
@@ -615,17 +835,28 @@
 <footer class="footer-section" id="cont-us">
     <div class="container-fluid">
         <div class="row d-flex justify-content-between">
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 ">
                 <a href="#">
                     <img class="web-logo" src="logo.png">
                 </a>
                 <p>Traveling opens the door to new adventures, allowing you to explore breathtaking destinations
                     and immerse yourself in diverse cultures. From serene beaches to majestic mountains, every journey creates
                     unforgettable memories.</p>
+                    <div>
+                        <ul style="list-style: none;">
+                             
+                            <li class="d-flex gap-3  mt-2">
+                                <a href="#" class="text-white social-img"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-white social-img"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="text-white social-img"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white social-img"><i class="fab fa-tiktok"></i></a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
             <div class="col-lg-8 col-md-6 d-flex justify-content-end">
                 <div class="row w-100">
-                    <div class="col-lg-6 col-md-6 mb-4 mt-5">
+                    <div class="col-lg-6 col-md-6 mt-3">
                         <h2 style="color: #FFBA21;">Contact Us</h2>
                         <ul class="my-list">
                             <li>
@@ -640,16 +871,10 @@
                             </li> <br>
                             <li><strong>Address:</strong></li>
                             <div class="mt-2">Chohan tower jail road lahore</div> <br>
-                            <li><strong>Social Accounts:</strong></li> 
-                            <li class="d-flex gap-3  mt-2">
-                                <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-white"><i class="fab fa-tiktok"></i></a>
-                            </li>
+                            
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-12 mb-4 mt-5">
+                    <div class="col-lg-6 col-md-12 mt-3">
                         <h2 style="color: #FFBA21;">Newsletter</h2>
                         <p class="news">Subscribe to get updates on the best travel destinations and tips.</p>
                         <form class="news">
