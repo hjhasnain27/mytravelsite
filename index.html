@@ -7,219 +7,14 @@
     <title>Responsive Travel Website</title>
 
     <!-- ✅ Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 🚀 FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    <style>
-       
-
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        /* 🌫️ Navbar collapse background fix for mobile */
-        @media (max-width: 991.98px) { /* Bootstrap lg breakpoint ke liye */
-    .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.7) !important;
-        backdrop-filter: blur(5px);
-        position: absolute;
-        top: 80px; /* Navbar height ke niche se start kare */
-        left: 0;
-        width: 100%;
-        z-index: 3;
-        padding: 10px 0;
-    }
-}
-
-
-
-
-        /* 🌫️ Navbar blur effect */
-        .navbar {
-            background-color:white !important;
-            backdrop-filter: blur(5px);
-            height: 100px;
-            z-index: 4;
-        }
-
-        /* 🎨 Navbar text styles */
-        .nav-manu {
-            color: Black !important;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-            margin: 0 20px;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        .nav-manu::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%) scaleX(0);
-            width: 100%;
-            height: 2px;
-            background-color:black;
-            transition: transform 0.4s ease-in-out;
-            transform-origin: center;
-        }
-
-        .nav-manu:hover::after {
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        .nav-manu:hover {
-            color: #6498C8 !important;
-        }
-
-        /* 🌟 Slider Centering */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            height:450px;
-            margin: 20px auto 100px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            
-        }
-        .slider-container img {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px; /* 🔄 Increase kiya border-radius for more curve */
-    transition: transform 0.8s ease, opacity 0.8s ease, filter 0.8s ease;
-    opacity: 0;
-    filter: blur(5px);
-    z-index: 1;
-    transform: scale(0.9);
-}
-
-.slider-container img.active {
-    transform: translateX(0) scale(1.2);
-    opacity: 1;
-    filter: blur(0);
-    z-index: 3;
-    border-radius: 30px !important; /* 🔥 Force border-radius apply */
-    overflow: hidden; /* ✅ Ensure rounded corners show after scaling */
-}
-
-.slider-container img.left,
-.slider-container img.right,
-.slider-container img.back {
-    border-radius: 30px; /* ✅ Baaki positions ke images pe bhi curve apply kiya */
-}
-
-        .slider-container img.left {
-            transform: translateX(-60%) scale(0.9);
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .slider-container img.right {
-            transform: translateX(60%) scale(0.9);
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .slider-container img.back {
-            transform: translateX(0) scale(0.8);
-            opacity: 0.3;
-            z-index: 1;
-            filter: blur(8px);
-        }
-
-        @media (max-width: 768px) {
-            .slider-container {
-                height: 250px;
-            }
-            .slider-container img {
-                width: 70%;
-            }
-            .text-animation-container {
-                font-size: 2rem;
-            }
-        }
-
-        
-        /* 🌟 Footer styles */
-        .footer-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('footer.jpg');
-            
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    background-color: #111; /* Fallback color if image doesn't load */
-    color: #fff;
-    padding: 0px 0px 10px 0px;
-}
-
-
-        .my-list {
-            text-decoration: none;
-            list-style: none;
-            padding: 0;
-        }
-
-        .my-list li {
-            font-size: 18px;
-        }
-
-        
-        @media (min-width: 768px) {
-            .my-list , .news {
-              line-height: 20px;
-              margin-top:20px ;
-            
-
-            }
-            
-        .footer-section h2
-        {
-     font-size: 40px;
-        }
-        }
-
-
-        .footer-section p {
-            text-align: justify;
-        }
-
-        @media (max-width: 768px) {
-            .footer-section .row > div {
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-        .web-logo{
-            object-fit: contain;
-            height: 150px;
-            width:150px;
-        }
-        .web-costum-container {
-    max-width: 1200px; /* Ya jitni width chahiye */
-    margin: 0 auto; /* Center karne ke liye */
-    padding: 0 20px; /* Thoda andar ka padding */
-}
-.social-img{
-    font-size: 20px;
-    color: black;
-    align-items: center;
     
-}
-.social-img:hover{
-    color: #0047AB;
-}
-
-    </style>
+    
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -228,11 +23,14 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed">
             <div class="container">
                 <a class="navbar-brand text-white" href="#">
-                    <img class="web-logo"  src="logo.png">
+                    <img class="web-logo"  src="Logo Expert Inn.png">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+                
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link nav-manu active" href="#">Home</a></li>
@@ -243,6 +41,7 @@
                 </div>
             </div>
         </nav>
+
  <div class="web-costum-container">
         <div class="text-animation-container">
             <span id="animated-text"></span>
@@ -254,7 +53,6 @@
         <img src="United Kindgom.png" class="back" alt="Image 3">
         <img src="spain.png" class="left" alt="Image 4">
     </div>
-
     <!-- 🌟 Animation Script -->
     <script>
 
@@ -277,159 +75,20 @@
         updatePositions();
     </script>
 
-
 <!-- About Us  -->
-
-<style>
-    .section-container {
-        display: flex;
-        
-        align-items: center;
-    }
-    
-    .left-column {
-        position: relative;
-        border: 2px solid #0047AB;
-        width: 330px;
-        height: 400px;
-        display: flex;
-        margin-left: 80px;
-        border-radius: 10px;
-        justify-content: center;
-        align-items: center;
-        overflow: visible;
-    }
-    /* 🔥 New Left Border Line */
-    .left-column::before {
-        content: "";
-        position: absolute;
-        left: -70px; /* 50px (image offset) + 20px (gap) */
-        top: 20px;
-        width: 4px;
-        height: 50%;
-        background-color: #0047AB;
-    }
-
-    .left-column img.main-img {
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        width: 330px;
-        height: 420px;
-        object-fit: cover;
-    }
-
-    .left-column img.overlay-img {
-        position: absolute;
-        right: -60px;
-        top: 250px;
-        bottom: -60px;
-        width: 200px;
-        height: 190px;
-    }
-
-    .right-column {
-        flex: 1;
-    }
-
-    .about-heading {
-        margin-top: -60px;
-        color: #0047AB;
-        font-weight: 700;
-        font-size: 12px;
-    }
-
-    .about-sub-heading {
-        font-size: 40px;
-        font-weight: 700;
-    }
-
-    .circle-container {
-        display: flex;
-        gap: 20px;
-    }
-
-    .circle {
-        position: relative;
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
-        font-weight: bold;
-        color: #333;
-        background: #fff;
-    }
-
-    .circle::before {
-        content: "";
-        position: absolute;
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-        background: conic-gradient(#0047AB calc(var(--percentage) * 1%), #e0e0e0 0%);
-        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
-        mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
-    }
-
-    .circle span {
-        position: absolute;
-        text-align: center;
-        z-index: 1;
-    }
-
-    .circle-text {
-        margin-top: 30px;
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-    .icon-text {
-        font-size: 20px;
-    }
-
-    .icon-color {
-        color: #0047AB;
-        font-size: 20px;
-        font-weight: 900;
-    }
-
-    .tick-main {
-        margin-top: 20px;
-        list-style: none;
-        margin-left: 0px !important;
-        padding-left: 0px !important;
-    }
-
-    .btn-work {
-        margin-top: 20px;
-    }
-
-    .btn-work-inner {
-        background-color: #0047AB;
-        padding: 10px 40px;
-        border: none;
-        color: white;
-        font-size: 16px;
-        font-weight: 500;
-    }
-</style>
-
-<section class="section-container">
-    <div class="row">
+<section class="section-container" id="about-us">
+    <div class="row conatiner">
         <div class="col-md-5 ">
             <div class="left-column">
                 <img src="boximg.jpg" alt="Main Image" class="main-img">
-                <img src="glob.jpg" alt="Overlay Image" class="overlay-img">
+                <img src="Passport  img.png" alt="Overlay Image" class="overlay-img">
             </div>
         </div>
         <div class="col-md-7 ">
             <div class="right-column">
                 <p class="about-heading">ABOUT COMPANY</p>
                 <h2 class="about-sub-heading">Welcome to Experience <br>Visa Consulting Firm</h2>
-                <p class="pt-2">
+                <p class="pt-2 about-text">
                     Transmds is the world’s driving worldwide coordinations provider — we uphold industry and exchange the worldwide trade of merchandi
                 </p>
                 <div class="circle-container">
@@ -446,8 +105,8 @@
                 <div>
                     <ul class="tick-main">
                         <li class="icon-text"><i class="fa-solid fa-check icon-color"></i> Immigration & Visa Consulting</li>
-                        <li><i class="fa-solid fa-check icon-color"></i> Direct Online Interview</li>
-                        <li><i class="fa-solid fa-check icon-color"></i> 99% Visa Approvals</li>
+                        <li class="icon-text"><i class="fa-solid fa-check icon-color"></i> Direct Online Interview</li>
+                        <li class="icon-text"><i class="fa-solid fa-check icon-color"></i> 99% Visa Approvals</li>
                     </ul>
                     <div class="btn-work">
                         <button type="submit" class="btn-work-inner">About Us <i class="fa-solid fa-arrow-right"></i></button>
@@ -459,74 +118,55 @@
 </section>
 </div>
 
+<script>
+
+    
+    document.addEventListener("DOMContentLoaded", function () {
+    const mainImg = document.querySelector(".left-column img.main-img");
+    const overlayImg = document.querySelector(".left-column img.overlay-img");
+
+    const observerOptions = {
+        root: null, // Viewport ko observe karega
+        threshold: 0.3 // Jab 30% image visible ho tab animation trigger ho
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                mainImg.classList.add("animate");
+                overlayImg.classList.add("animate");
+                observer.disconnect(); // Ek dafa trigger hone ke baad observe karna stop kar dega
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(mainImg);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heading = document.querySelector(".about-sub-heading");
+
+    const observerOptions = {
+        root: null, // Viewport observe karega
+        threshold: 0.5 // 50% visible hone pe trigger hoga
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heading.classList.add("animate");
+                observer.disconnect(); // Ek dafa animation hone ke baad repeat nahi hogi
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(heading);
+});
+
+</script>
 
 
-<!-- our services  -->
-<style>
-    .marquee-container {
-        
-        height: 100px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 50px;
-    }
-
-    .marquee-content {
-        display: flex;
-        gap: 60px;
-        animation: scrollFlags 30s linear infinite;
-    }
-
-    .marquee-wrapper {
-        display: flex;
-        width: max-content; /* Dynamic width for perfect fit */
-    }
-
-    .flag-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        flex-shrink: 0;
-    }
-
-    .flag-item img {
-        height: 30px;
-        width: 50px;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .country-name {
-        margin-top: 5px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #333;
-    }
-
-    @keyframes scrollFlags {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    /* Extra gap at the end to match inter-flag spacing */
-    .end-gap {
-        width: 5px; /* Same as gap between flags */
-    }
-    .e-visa{
-        font-size: 30px;
-        margin-top:50px;
-        color:Black;
-    }
-</style>
-
+<!-- flag slider  -->
 <div>
     <h2  class=" container e-visa"> E-visa Servics:</h2>
 </div>
@@ -571,7 +211,6 @@
                 <img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka Flag">
                 <div class="country-name">Sri Lanka</div>
             </div>
-
             <!-- ⭐ Added gap for smooth transition ⭐ -->
             <div class="end-gap"></div>
         </div>
@@ -618,9 +257,9 @@
     </div>
 </section>
 
+<!-- services -->
 
-
-<section class="services-section">
+<section class="services-section  " id="our-serve">
     <div class="image-container lg-3">
         <img src="serve-back1.jpg" alt="United States" class="service-image" />
     </div>
@@ -634,99 +273,6 @@
     <!-- Cards Positioned Overlapping Both Sections -->
     <div class="cards-container"></div>
 </section>
-
-<style>
-    .serve-heading{
-        font-size:12px;
-        margin-left: 40px;
-        color:#0047AB;
-        font-weight: 900;
-    }
-    .serv-tagline{
-        margin-top: 10px;
-        font-size: 30px;
-        margin-left: 40px;font-weight: 700;
-    
-    }
-    .services-section {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        overflow: hidden;
-        background: linear-gradient(to bottom, #ffffff, #EBEEF5, #ffffff);
-
-
-    }
-    .image-container {
-        height: 100%;
-        position: relative;
-        flex: 1;
-    }
-    .image-container.lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-    .service-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .content-container {
-        position: relative;
-        
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-    .content-container.lg-9 {
-        flex: 0 0 75%;
-        max-width: 75%;
-    }
-    .cards-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        overflow: hidden;
-        width: 80%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-    }
-    .card {
-        flex: 1;
-        min-width: 30%;
-        background: #f8f9fa;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        position: relative;
-    }
-    .card-image {
-        width: 100%;
-        height: 200px;
-        border-radius: 10px 10px 0 0;
-    }
-    .arrow-button {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        background: #0047AB;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        font-size: 18px;
-        cursor: pointer;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-</style>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const container = document.querySelector(".cards-container");
@@ -772,53 +318,45 @@
         updateCards();
         setInterval(slideCards, 3000); // Change cards every 2 seconds
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const taglines = document.querySelectorAll(".serv-tagline");
+
+    const observerOptions = {
+        root: null, // Observe viewport
+        threshold: 0.3 // Jab 30% visible ho tab animation chale
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show"); // Add class to trigger animation
+                observer.unobserve(entry.target); // Ek dafa hone ke baad observe stop
+            }
+        });
+    }, observerOptions);
+
+    taglines.forEach(tagline => observer.observe(tagline));
+});
+
+
 </script>
 
+<!-- Packages -->
 <div class="web-costum-container">
-
-
-    <div class="circle-container">
-        <div class="circle-box">
+    <div class="mycircle-container">
+        <div class="mycircle-box">
             <img src="package1.jpg" alt="Service Image">
         </div>
-        <div class="circle-box">
+        <div class="mycircle-box">
             <img src="package1.jpg" alt="Service Image">
         </div>
-        <div class="circle-box">
+        <div class="mycircle-box">
             <img src="package1.jpg" alt="Service Image">
         </div>
     </div>
     
     <style>
-    /* Main Container */
-    .circle-container {
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Align vertically */
-        gap: 20px; /* Space between circles */
-        margin: 50px 0px;
-    }
-    
-    /* Circle Box */
-    .circle-box {
-        width: 150px; /* Circle size */
-        height: 150px;
-        border-radius: 50%; /* Makes it circular */
-        background: linear-gradient(15deg, #DDE2EB, #EBEEF5); /* Soft gradient */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Crop extra image parts */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    }
-    
-    /* Image inside Circle */
-    .circle-box img {
-        width: 85%; /* Adjust image size */
-        height: 85%;
-        object-fit: cover; /* Crop image to fit */
-        border-radius: 50%; /* Ensures image is also circular */
-    }
     </style>
     
 
@@ -829,15 +367,13 @@
 
 </div>
 
-
-
 <!-- 🌟 Footer Section with Icons -->
 <footer class="footer-section" id="cont-us">
     <div class="container-fluid">
         <div class="row d-flex justify-content-between">
             <div class="col-lg-3 col-md-6 ">
                 <a href="#">
-                    <img class="web-logo" src="logo.png">
+                    <img class="web-logo" src="Logo Expert Inn.png">
                 </a>
                 <p>Traveling opens the door to new adventures, allowing you to explore breathtaking destinations
                     and immerse yourself in diverse cultures. From serene beaches to majestic mountains, every journey creates
